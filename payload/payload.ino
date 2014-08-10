@@ -37,7 +37,7 @@ const int SAMPLE_SIZE = 25;    // Number of samples from ADC readings
 // --------------------------------
 // RTTY data and control variables
 // -------------------------------- 
-#define RADIOPIN 9              // Output pin for RTTY communication
+#define RADIOPIN 5              // Output pin for RTTY communication
  
 #define ASCII 7                 // Number of ASCII bits for each char
 #define STOPBITS 2              // Number of stop bits to send
