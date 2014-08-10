@@ -8,3 +8,8 @@ sudo cp programmers.txt /usr/share/arduino/hardware/arduino/
 mkdir -p ~/sketchbook
 cp -R libraries ~/sketchbook/
 cp upload.sh ~/sketchbook/
+
+cp arduino.mk ~/sketchbook/ 
+cp Makefile ~/sketchbook/
+
+sudo cp avrdude.conf /etc/avrdude.conf
