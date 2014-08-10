@@ -9,17 +9,8 @@ wget http://project-downloads.drogon.net/gertboard/avrdude_5.10-4_armhf.deb
 sudo dpkg -i avrdude_5.10-4_armhf.deb
 sudo chmod 4755 /usr/bin/avrdude
 
-Add boards into Arduino IDE
-======================================================
-cd /tmp
-wget http://project-downloads.drogon.net/gertboard/boards.txt
-wget http://project-downloads.drogon.net/gertboard/programmers.txt
-cd /usr/share/arduino/hardware/arduino
-sudo mv boards.txt board.txt.bak
-sudo mv /tmp/boards.txt .
-sudo mv programmers.txt programmers.txt.bak
-sudo mv /tmp/programmers.txt .
 
+Setup Toolchain
+==============================================
+Run ~/hab/arduino/install.sh
 
-Load Arduino IDE from Raspberry Pi Desktop
-=====================================================
