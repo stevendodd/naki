@@ -39,5 +39,5 @@
 ehthumbs.db
 Thumbs.db
 
-.dep
-.lib
+.dep/
+.lib/
