@@ -13,3 +13,7 @@ cp arduino.mk ~/sketchbook/
 cp Makefile ~/sketchbook/
 
 sudo cp avrdude.conf /etc/avrdude.conf
+
+# Add background process for logger
+sudo cp /home/pi/hab/scripts/logTelemetry.sh /etc/init.d
+sudo update-rc.d logTelemetry.sh defaults

@@ -123,10 +123,6 @@ void setup()
   // Set up the digital output pin for Tx to N2TX radio module
   pinMode(RADIOPIN,OUTPUT);
 
-  //pinMode(internalTempPin,INPUT);
-  //pinMode(externalTempPin,INPUT);
-  //pinMode(batteryPin,INPUT);
-
   // Setup the software serial logging and print 1st message
   Logger.begin(9600);
   delay(100);
@@ -143,7 +139,14 @@ void loop()
 {
    if (trackerMode == 1)            // If we can read sensors and generate new telemetry string do so
      generateTelemetry();
-   
+
+//	 if (trackerMode == 1) {
+//		 digitalWrite(RADIOPIN, LOW);
+//		 sprintf(telemetry_str,"hello world hello world hello world");
+//		 trackerMode=2;
+//		 delay(2000);
+//	 }
+
    delay(500);                    // Don't go around this loop more than once 1/2 a second
 
    // TO DO: Consider implementing a watchdog timeout
