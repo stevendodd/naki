@@ -10,7 +10,7 @@ Code is written for an ATMega328p microcontroller; and interfaces with http://uk
 3. Transmit string using RTTY over a Radio transmitter
 4. Repeat
 
-The tracker board has the following features:
+###The tracker board has the following features:
 
 * ATMega microcontroller with external 16Mz clock
 * Reset jumper to restart the ATMega program
@@ -25,4 +25,14 @@ The tracker board has the following features:
   * Reading serial output from the ATMega program and logging on the pi SD card
 * Power jumpers to allow power from the Raspberry Pi or independent supply
   
- 
+###This repository contains the following:
+
+**arduino** - Toolchain for compilation and installation for a standard Raspberry Pi
+
+**docs**	- Instructions and notes
+
+**eagle** - Eagle schematic and board
+
+**payload** - ATMega code and compile scripts
+
+**scripts** - init.d and logging scripts to save serial output and photos to the Raspberry Pi SD card
