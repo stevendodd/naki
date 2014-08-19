@@ -28,7 +28,11 @@ Code is written for an ATMega328p microcontroller; and interfaces with http://uk
 ###This repository contains the following:
 
 **arduino** - Toolchain installation for a standard Raspberry Pi to compile payload sketch
+
 **docs**	- Instructions and notes (basic)
+
 **eagle** - Eagle schematic and board design
+
 **payload** - Tracker ATMega code/sketch and compile scripts
+
 **scripts** - init.d and logging scripts to save serial output and photos to the Raspberry Pi SD card
