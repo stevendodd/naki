@@ -1,19 +1,19 @@
 #!/bin/sh
  
 ### BEGIN INIT INFO
-# Provides:          logTelemetry
+# Provides:          tracker
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: HAB Tracker Logger
+# Short-Description: Naki HAB Tracker Logger
 # Description:       Put a long description of the service here
 ### END INIT INFO
  
 # Change the next 3 lines to suit where you install your script and what you want to call it
 DIR=/home/pi/hab/scripts
-DAEMON=$DIR/readSerial.py
-DAEMON_NAME=logTelemetry
+DAEMON=$DIR/naki.py
+DAEMON_NAME=tracker
  
 # Add any command line options for your daemon here
 DAEMON_OPTS=""
