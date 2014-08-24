@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import serial
 import re
 from subprocess import call
@@ -7,17 +8,34 @@ from subprocess import call
 #=================================================================
 # Log all serial output debug=1 else debug=0 for just telemetry data
 debug = 0
+projectRoot = "/home/pi/hab/"
 
 # save telemetry data in logfile if save=1
 save = 1
-telemtryOutput = "/home/pi/hab/logs/telemetry.log"
+telemtryFile = "telemetry.log"
 
 # take photos if photos=1
 photos=1
-photoDirectory = "/home/pi/hab/photos/"
 
 port = serial.Serial("/dev/ttyAMA0", baudrate=9600, timeout=3.0)
 #=================================================================
+
+outputDirectoryBaseName = projectRoot + "output/naki"
+outputDirectoryName = outputDirectoryBaseName
+counter = 1
+
+while (os.path.isdir(outputDirectoryName)):
+ outputDirectoryName = outputDirectoryBaseName + str(counter)
+ counter += 1 
+
+os.makedirs(outputDirectoryName)
+telemtryOutput = outputDirectoryName + "/" + telemtryFile
+photoDirectory = outputDirectoryName + "/"
+currentRunLinkName = projectRoot + "currentRun"
+os.remove(currentRunLinkName)
+os.symlink(outputDirectoryName, currentRunLinkName)
+
+f = open(telemtryOutput, 'w')
 
 # Read a line from the serial port
 def readlineCR(port):
@@ -28,8 +46,6 @@ def readlineCR(port):
         #if ch=='\r' or ch=='' or ch=='\n':
         if ch=='\n':
             return rv
-
-f = open(telemtryOutput, 'w')
 
 while True:
     rcv = readlineCR(port)

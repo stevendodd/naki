@@ -41,5 +41,5 @@ Thumbs.db
 
 .dep/
 .lib/
-logs/*
-photos/*
+output/
+currentRun
